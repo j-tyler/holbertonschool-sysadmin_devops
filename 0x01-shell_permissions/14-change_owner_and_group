@@ -1,2 +1,2 @@
 #!/bin/bash
-chown -R --preserve-root betty:holberton
+chown -R betty:holberton .
