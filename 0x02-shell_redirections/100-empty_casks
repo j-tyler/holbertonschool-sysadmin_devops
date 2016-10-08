@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -Rla | tr -s ' ' | cut --delimiter=' ' -f5,9 -s
