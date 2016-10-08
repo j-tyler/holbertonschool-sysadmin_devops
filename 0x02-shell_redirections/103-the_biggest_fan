@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -f1 | sort | uniq -c | sort -nr | head --lines=11 | cut --delimiter=' ' -f6
+cut -f1 | sort | uniq -c | sort -nr | head --lines=11 | tr -s ' '| cut --delimiter=' ' -f3
