@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $TEMP | tr ':' '\n' | cut -d'/' -f2 -s | wc -l
