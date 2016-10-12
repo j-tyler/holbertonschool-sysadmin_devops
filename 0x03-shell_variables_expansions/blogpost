@@ -4,12 +4,12 @@ Do you know? I thought I did, but I was far from fully understanding the process
 
 Lets first imagine we are in a directory that has the files hello.c, hi.js, and happy.c. We have two .c files and one .js file.
 
-The first operation that is performed is the expansion of the ‘*.c’. The star is a wildcard that means anymatch, so this string becomes all files in the current directory that are any character(s) and end is .c. So for our imaginary directory, our command expands from ls *.c to ls hello.c happy.c. 
+The first operation that is performed is the expansion of the ‘*.c’. The asterisk is a wildcard that means anymatch, so this string becomes all files in the current directory that are any character(s) and end is .c. Without the .c, it would just match all files and be redundent to a simple 'ls' command. So for our imaginary directory, our command expands from ls *.c to ls hello.c happy.c. 
 
-Now that we have our expanded string of ls hello.c happy.c, the second operation is a search for what ‘ls’ means. It could either be an alias in the shell or a program to execute. The shell starts by looking for aliases. If an alias is found, it is substitued as written. Assuming we have no aliases overwriting the meaning os ls, the shell searches the system $PATH for programs called ls. $PATH is a variable that stores the directories that the shell should search for programs, in this case ls. Since ls is a standard program on linux machines, it will find and execute that program.
+Now that we have our expanded string of ls hello.c happy.c, the second operation is a search for what ‘ls’ means. It could either be an alias in the shell or a program to execute. The shell starts by looking for aliases. If an alias is found, it is substitued as written. Assuming we have no aliases overwriting the meaning of ls, the shell searches the system $PATH for programs called ls. $PATH is a variable that stores the directories that the shell should search for programs, in this case ls. Since ls is a standard program on linux machines, it will find and execute that program.
 
-The ls program then takes the arguments hello.c and happy.c as specified as command line arguments. Each program will be made to do its own function, and in this case ls lists those files in the directory and exits.  
+The ls program then takes the arguments hello.c and happy.c as specified as command line arguments. The program ls will be made to its designed function, in this case listing those files in the directory.  
 
-On completion, the system returns the prompt-stored in $PS1-and waits for the next command.
+On completion, the program exits and the system returns the prompt-stored in $PS1 and waits for the next command.
 
 There are a lot of steps that go into every command a computer receives. Most users barely see anything that happens when they execute a program or type in a command, but by better understanding how a computer handles our input, we gain a sharper ability to use the power given to us. Today we saw that even a simple sequence of 6 characters, ls *.c, generates a bunch of operations in the computer before giving us back the result.
