@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# printout information about the env
+
+while true; do
+sudo cat /etc/passwd | cut -f1,3,6 -d':'
+break
+done
