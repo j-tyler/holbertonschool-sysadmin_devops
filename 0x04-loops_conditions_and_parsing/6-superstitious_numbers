@@ -11,6 +11,8 @@ elif [ $i -eq 8 ]; then
 echo "bad luck from Japan"
 elif [ $i -eq 17 ]; then
 echo "bad luck from Italy"
+elif [ $i -eq 25 ]; then
+echo 'this gets around "case"'
 fi
 i=$((i+1))
 done
