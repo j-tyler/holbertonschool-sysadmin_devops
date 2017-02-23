@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Print forever and ever
+
+while true
+do 
+    echo "To infinity and beyond"
+    sleep 2
+done
+
+trap noExit 15
+
+noExit() {
+   echo "I am invincible!!!"
+}
