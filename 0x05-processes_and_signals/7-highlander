@@ -7,8 +7,4 @@ do
     sleep 2
 done
 
-trap noExit 15
-
-noExit() {
-   echo "I am invincible!!!"
-}
+trap 'echo "I am invincible!!!"' SIGTERM
