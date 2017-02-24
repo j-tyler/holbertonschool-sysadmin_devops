@@ -1,0 +1,4 @@
+RSAAuthentication yes
+PubkeyAuthentication yes
+IdentityFile ~/.ssh/holberton
+PasswordAuthentication no
