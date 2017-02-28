@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx
+sudo apt-get update
 sudo apt-get -y install nginx
-sudo nginx
 echo 'user www-data;
 worker_processes 4;
 pid /run/nginx.pid;
@@ -30,16 +30,6 @@ http {
         include /etc/nginx/sites-enabled/*;
 }
 
-
-http {
-    server {
-        location / {
-            root /home/ubuntu;
-        }
-        error_page 404 /404.html;
-        location = /404.html {
-                root /home/ubuntu;
-        }
 http {
     server {
         location / {
@@ -54,6 +44,6 @@ http {
         }
     }
 }' | sudo tee /etc/nginx/nginx.conf > /dev/null
-sudo nginx -s reload
+sudo service nginx start
 echo "Holberton School" > index.html
 echo "Ceci n'est pas une page" > 404.html
