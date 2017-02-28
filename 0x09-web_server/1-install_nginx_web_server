@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Install nginx
 sudo apt-get -y install nginx
+sudo nginx
 echo 'user www-data;
 worker_processes 4;
 pid /run/nginx.pid;
