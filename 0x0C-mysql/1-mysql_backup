@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# backup the database and TAR it
+mysqldump -u root -p"$1" --opt --events --all-databases > backup.sql
+tar -czf "$(date +'%d-%m-%Y').tar.gz" backup.sql
