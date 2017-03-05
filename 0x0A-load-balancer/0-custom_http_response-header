@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Install nginx
-HOSTNAME=`hostname`
+HOSTNAME=$(hostname)
 sudo apt-get update
 sudo apt-get -y install nginx
 echo 'user www-data;
@@ -31,12 +31,12 @@ http {
         listen 80;
         server_name localhost;
         location / {
-            add_header X-Served-By $HOSTNAME; 
+            add_header X-Served-By '"$HOSTNAME"'; 
             root /home;
         }
         error_page 404 /404.html;
         location = /404.html {
-            add_header X-Served-By $HOSTNAME; 
+            add_header X-Served-By '"$HOSTNAME"'; 
             root /home;
         }
         location /redirect_me {
