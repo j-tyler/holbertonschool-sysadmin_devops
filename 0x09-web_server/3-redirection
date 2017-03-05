@@ -26,9 +26,6 @@ http {
         gzip on;
         gzip_disable "msie6";
 
-        include /etc/nginx/conf.d/*.conf;
-        include /etc/nginx/sites-enabled/*;
-
     server {
         listen 80;
         server_name localhost;
@@ -46,5 +43,5 @@ http {
 }' | sudo tee /etc/nginx/nginx.conf > /dev/null
 sudo service nginx start
 sudo service nginx reload
-echo "Holberton School" > index.html
-echo "Ceci n'est pas une page" > 404.html
+echo "Holberton School" | sudo tee /home/index.html
+echo "Ceci n'est pas une page" | sudo tee /home/404.html
