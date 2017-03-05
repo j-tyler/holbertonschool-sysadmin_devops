@@ -30,11 +30,11 @@ http {
         listen 80;
         server_name localhost;
         location / {
-            root /home/ubuntu;
+            root /home;
         }
         error_page 404 /404.html;
         location = /404.html {
-            root /home/ubuntu;
+            root /home;
         }
         location /redirect_me {
             rewrite ^/redirect_me http://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
