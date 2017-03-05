@@ -33,11 +33,11 @@ http {
         listen 80;
         server_name localhost;
         location / {
-            root /home/ubuntu;
+            root /home;
         }
         error_page 404 /404.html;
         location = /404.html {
-            root /home/ubuntu;
+            root /home;
         }
         location /redirect_me {
             rewrite ^/redirect_me http://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;
@@ -46,5 +46,5 @@ http {
 }' | sudo tee /etc/nginx/nginx.conf > /dev/null
 sudo service nginx start
 sudo service nginx reload
-echo "Holberton School" > index.html
-echo "Ceci n'est pas une page" > 404.html
+echo "Holberton School" | sudo tee /home/index.html
+echo "Ceci n'est pas une page" | sudo tee /home/404.html
