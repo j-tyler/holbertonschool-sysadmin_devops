@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-# Install nginx
-sudo add-apt-repository -y ppa:vbernat/haproxy-1.5
+# Install HAProxy
+# Configure as requested by spec.
 sudo apt-get update
-sudp apt-get dist-upgrade
 sudo apt-get -y install haproxy
 echo 'global
         log /dev/log    local0
@@ -50,4 +49,3 @@ backend servers
         server 82-web-02 52.54.98.43:80 maxconn 32' | sudo tee /etc/haproxy/haproxy.cfg > /dev/null
 echo 'ENABLED=1' | sudo tee /etc/default/haproxy > /dev/null
 sudo service haproxy start
-sudo service haproxy restart
