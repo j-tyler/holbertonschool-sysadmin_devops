@@ -42,6 +42,8 @@ defaults
 frontend http-in
         bind *:80
         mode http
+        option httpclose
+	option forwardfor
         default_backend servers
 
 backend servers
