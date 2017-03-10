@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# nginx should run on user nginx
+sudo sed -i '1 c\user nginx;' /etc/nginx/nginx.conf
+sudo sed -i 's/listen 80 default_server/listen 8080 default_server/g' /etc/nginx/sites-enabled/default
+sudo sed -i 's/80 default_server ipv6only/8080 default_server ipv6only/g' /etc/nginx/sites-enabled/default
+# shellcheck disable=SC2046
+sudo kill -9 $(pgrep apache2)
+sudo service nginx start
