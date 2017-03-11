@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 # fix nginx on port 8080 not 80
+sudo apt-get -y install curl
 sudo sed -i 's/listen 8080 default_server/listen 80 default_server/g' /etc/nginx/sites-enabled/default 
 sudo service nginx start
